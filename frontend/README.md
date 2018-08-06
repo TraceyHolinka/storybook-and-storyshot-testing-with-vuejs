@@ -1,10 +1,8 @@
-# vue-graphql-meetup-frontend
-
-> Vue GraphQL Meetup Frontend
+#Frontend
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 yarn # or npm install
 

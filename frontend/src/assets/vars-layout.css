@@ -1,0 +1,170 @@
+/*
+Created by Tracey Holinka (https://traceyholinka.com/) April 2017.
+Use CSS Custom properties to create the most common design grids.
+
+CSS3 Grid is supported by:
+Chrome 57+
+Firefox 53+
+IE 10+
+IOS Safari 10.3+
+Android Chrome 57+
+
+IE does not have a gap property so the gaps are represented by a column. For example a 4 column mobile grid having 3 column gaps is represent by a total of 7 columns.
+
+1 column 1 gap 1 column 1 gap 1 column 1 gap 1 column
+
+To represent 4 columns with whitespace gaps:
+
+column 1: <code>grid-column: 1</code>
+column 2: <code>grid-column: 3</code>
+column 3: <code>grid-column: 5</code>
+column 4: <code>grid-column: 7</code>
+
+This grid is fully responsive by using <code>fr</code> for columns while gaps are static. Mobile view are a 4 column grid. Tablet and above is a 12 column grid.
+
+*/
+
+:root {
+  /* Declares grid */
+  --grid: {
+    display: -ms-grid;
+    display: grid;
+  }
+
+  /* --- MOBILE --- */
+  /* 4 column grid (12px gutter). Width is fluid. */
+  --4-column-grid: {
+    /* column (gutter column) repeat 3X */
+    -ms-grid-columns: 1fr (16px 1fr) [3]; /* IE is very picky about grid property spacing */
+    /* column repeat 3X(gutter column) */
+    grid-template-columns: 1fr repeat(3, 16px 1fr);
+  }
+
+  --4-column-grid-all-columns: {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1 / span 7;
+  }
+
+  /* -- TABLETS AND ABOVE -- */
+  /* 12 column grid (24px gutter).  Width is fluid. */
+  --12-column-grid: {
+    -ms-grid-columns: 1fr (24px 1fr) [11]; /* IE is very picky about grid property spacing */
+    grid-template-columns: 1fr repeat(11, 24px 1fr);
+  }
+
+  /* -- Placing and element within the grid -- */
+
+  /* Element spans the entire grid */
+  --12-column-grid-all-columns: {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 23;
+    grid-column: 1 / span 23;
+  }
+
+  /* Element spans the column 2 to column 11 of the grid */
+  --12-column-grid-span-column-2-to-11: {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 19;
+    grid-column: 3 / span 19;
+  }
+
+  /* -- 4-4-4-split --/
+  /* Element spans first 3 columns or 1/3rds of the grid */
+  --12-column-grid-third-split-first-columns: {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1 / span 7;
+  }
+
+  /* Element spans middle 3 columns or 1/3rds of the grid */
+  --12-column-grid-third-split-middle-columns: {
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 7;
+    grid-column: 9 / span 7;
+  }
+
+  /* Element spans last 3 columns or 1/3rds of the grid */
+  --12-column-grid-third-split-last-columns: {
+    -ms-grid-column: 17;
+    -ms-grid-column-span: 7;
+    grid-column: 17 / span 7;
+  }
+  /* -- End 4-4-4-split --/
+
+  /* -- 3-9-split --/
+ /* Element spans first 3 columns or 1/3rds of the grid */
+  --12-column-grid-3-9-split-first-columns: {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1 / span 5;
+  }
+
+  /* Element spans last 9 columns or 2/3 of the grid */
+  --12-column-grid-3-9-split-last-columns: {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 17;
+    grid-column: 7 / span 17;
+  }
+  /* -- End 3-9-split --/
+
+  /* -- 6-6-split --/
+  /* Element spans the fist 6 columns or half the grid */
+  --12-column-grid-6-6-split-first-columns: {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 11;
+    grid-column: 1 / span 11;
+  }
+
+  /* Element spans the last 6 columns or half the grid */
+  --12-column-grid-6-6-split-last-columns: {
+    -ms-grid-column: 13;
+    -ms-grid-column-span: 11;
+    grid-column: 13 / span 11;
+  }
+  /* -- End 6-6-split --/ */
+
+  /* -- 8-4-split --/
+  /* Element spans the first 8 columns */
+  --12-column-grid-8-4-split-first-columns: {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 15;
+    grid-column: 1 / span 15;
+  }
+
+  /* Element spans the last 4 columns */
+  --12-column-grid-8-4-split-last-columns: {
+    -ms-grid-column: 17;
+    -ms-grid-column-span: 7;
+    grid-column: 17 / span 7;
+  }
+  /* -- End 8-4-split --/
+
+  /* -- 9-3-split --/
+  /* Element spans first 9 columns or 2/3rds of the grid */
+  --12-column-grid-9-3-split-first-columns: {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 17;
+    grid-column: 1 / span 17;
+  }
+
+  /* Element spans last 3 columns or 1/3 of the grid */
+  --12-column-grid-9-3-split-last-columns: {
+    -ms-grid-column: 19;
+    -ms-grid-column-span: 5;
+    grid-column: 19 / span 5;
+  }
+  /* -- End 9-3-split --/
+
+  /* -- Cell alignment -- */
+
+  --grid-hort-center: {
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+
+  --grid-vert-center: {
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+}
