@@ -1,61 +1,153 @@
 const faker = require('faker')
 
-function bodyText (headingWordCount, paragraphCount) {
-  return '<h2>'+ faker.lorem.words(headingWordCount) +'</h2><p>' + faker.lorem.paragraphs(paragraphCount, "</p><p>") + '</p><h3>' + faker.lorem.words(headingWordCount) +'</h3><p>' + faker.lorem.paragraphs(paragraphCount, "</p><p>") + '</p>'
+const avatarUrl = 'http://localhost:3000/assets/avatar.png'
 
- }
+function getRandomInt(min, max) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min)) + min
+}
 
-const authors = [{
-  id: 0,
-  name: 'Test Author 1',
-},
-{
-  id: 1,
-  name: 'Test Author 2',
-}]
+function bodyText(headingWordCount, paragraphCount) {
+  return (
+    '<h2>' +
+    faker.lorem.words(getRandomInt(headingWordCount, headingWordCount + 5)) +
+    '</h2><p>' +
+    faker.lorem.paragraphs(getRandomInt(paragraphCount, paragraphCount + 2), '</p><p>') +
+    '</p><h3>' +
+    faker.lorem.words(getRandomInt(headingWordCount, headingWordCount + 5)) +
+    '</h3><p>' +
+    faker.lorem.paragraphs(getRandomInt(paragraphCount, paragraphCount + 2), '</p><p>') +
+    '</p>'
+  )
+}
 
-const articles = [{
-  id: 0,
-  title: 'Test Article 1',
-  summary: faker.lorem.sentence(15),
-  body: bodyText (3, 8),
-  imageUrl: 'http://localhost:3000/assets/cats1.jpeg',
-  authorId: 0
-},
-{
-  id: 1,
-  title: 'Test Article 2',
-  summary: faker.lorem.sentence(12),
-  body: bodyText (2, 10),
-  imageUrl: 'http://localhost:3000/assets/cats2.jpeg',
-  authorId: 0
-},
-{
-  id: 3,
-  title: 'Test Article 3',
-  summary: faker.lorem.sentence(20),
-  body: bodyText (5, 20),
-  imageUrl: 'http://localhost:3000/assets/cats3.jpeg',
-  authorId: 1
-}]
+function postedDate(days) {
+  return faker.date.recent(days)
+}
+
+const authors = [
+  {
+    id: 0,
+    name: 'Faker Author 1',
+    bio: faker.lorem.sentence(getRandomInt(10, 15)),
+    avatarUrl: avatarUrl
+  },
+  {
+    id: 1,
+    name: 'Faker Author 2',
+    bio: faker.lorem.sentence(getRandomInt(10, 15)),
+    avatarUrl: avatarUrl
+  },
+  {
+    id: 2,
+    name: 'Faker Author 3',
+    bio: faker.lorem.sentence(getRandomInt(10, 15)),
+    avatarUrl: avatarUrl
+  }
+]
+
+const articles = [
+  {
+    id: 0,
+    title: 'Headline for Faker Article 1',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(3, 8),
+    imageUrl: 'http://localhost:3000/assets/animals1.jpg',
+    authorId: 0,
+    postedDate: postedDate(0)
+  },
+  {
+    id: 1,
+    title: 'Headline for Faker Article 2',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(2, 10),
+    imageUrl: 'http://localhost:3000/assets/cats1.jpg',
+    authorId: 0,
+    postedDate: postedDate(1)
+  },
+  {
+    id: 2,
+    title: 'Headline for Faker Article 3',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(2, 10),
+    imageUrl: 'http://localhost:3000/assets/nature1.jpg',
+    authorId: 0,
+    postedDate: postedDate(1)
+  },
+  {
+    id: 3,
+    title: 'Headline for Faker Article 4',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(5, 20),
+    imageUrl: 'http://localhost:3000/assets/animals2.jpg',
+    authorId: 1,
+    postedDate: postedDate(1)
+  },
+  {
+    id: 4,
+    title: 'Headline for Faker Article 5',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(5, 20),
+    imageUrl: 'http://localhost:3000/assets/cats2.jpg',
+    authorId: 2,
+    postedDate: postedDate(2)
+  },
+  {
+    id: 5,
+    title: 'Headline for Faker Article 6',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(5, 20),
+    imageUrl: 'http://localhost:3000/assets/nature2.jpg',
+    authorId: 0,
+    postedDate: postedDate(2)
+  },
+  {
+    id: 6,
+    title: 'Headline for Faker Article 7',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(5, 20),
+    imageUrl: 'http://localhost:3000/assets/animals3.jpg',
+    authorId: 1,
+    postedDate: postedDate(2)
+  },
+  {
+    id: 7,
+    title: 'Headline for Faker Article 8',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(5, 20),
+    imageUrl: 'http://localhost:3000/assets/cats3.jpg',
+    authorId: 1,
+    postedDate: postedDate(2)
+  },
+  {
+    id: 8,
+    title: 'Headline for Faker Article 9',
+    summary: faker.lorem.paragraph(getRandomInt(3, 5)),
+    body: bodyText(5, 20),
+    imageUrl: 'http://localhost:3000/assets/nature3.jpg',
+    authorId: 2,
+    postedDate: postedDate(2)
+  }
+]
 
 module.exports = {
-  getArticle (id) {
+  getArticle(id) {
     return articles.find(x => x.id === id)
   },
-  getAuthor (id) {
+  getAuthor(id) {
     return authors.find(x => x.id === id)
   },
-  getArticles () {
-  return articles
+  getArticles() {
+    return articles
   },
-  getAuthors () {
+  getAuthors() {
     return authors
   },
-  getArticlesByAuthor (id) {
+  getArticlesByAuthor(id) {
     return articles.filter(x => x.authorId === id)
   },
-  setAuthorName (id, name) {
+  setAuthorName(id, name) {
     const author = authors.find(x => x.id === id)
     author.name = name
     return author

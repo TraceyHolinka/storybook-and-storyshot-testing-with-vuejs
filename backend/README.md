@@ -1,15 +1,14 @@
-# vue-graphql-meetup-backend
-
-> Vue GraphQL Meetup Backend
+# Backend
 
 ## Database schema
-https://app.quickdatabasediagrams.com/#/schema/smfxviNho0mTmN8rJ7kuDQ
 
 ```
 Author
 -
 id PK int
 name string
+avatarUrl string
+bio string
 
 Article
 -
@@ -18,11 +17,13 @@ title string
 summary string
 body string
 imageUrl string
+postedDate string
 authorId int FK >- Author.id
 ```
 
 ## Build Setup
-``` bash
+
+```bash
 # install dependencies
 yarn # or npm install
 
@@ -35,4 +36,5 @@ node server
 You have to restart the server yourself when you make changes.
 
 ## Graphiql
+
 Go to http://localhost:3000/graphiql to run queries!

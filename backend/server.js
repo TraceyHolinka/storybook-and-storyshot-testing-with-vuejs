@@ -4,20 +4,6 @@ const cors = require('cors')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
 const { makeExecutableSchema } = require('graphql-tools')
 
-// A simple data model
-// Author
-// -
-// id PK int
-// name string
-
-// Article
-// -
-// id PK int
-// title string
-// summary string
-// body string
-// imageUrl string
-// authorID int FK >- author.id
 const db = require('./database.js')
 
 // The GraphQL schema in string form
@@ -29,10 +15,13 @@ const typeDefs = `
     body: String
     imageUrl: String
     author: Author
+    postedDate: String
   }
   type Author {
     id: Int!
     name: String!
+    bio: String
+    avatarUrl: String
     articles: [Article]
   }
   type Query {
