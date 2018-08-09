@@ -7,10 +7,10 @@ export default {
 <template>
 <div>
     <header class="masthead">
-        <h1>The Real Fake News</h1>
+        <router-link :to="{ name: 'home'}"><h1>Faker News: The Real Fake News</h1></router-link>
     </header>
 </div>
 </template>
 
-<style>
+<style lang="postcss">
 </style>

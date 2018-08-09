@@ -8,6 +8,11 @@ export function createRouter() {
         path: '/',
         name: 'home',
         component: () => import('../views/Home')
+      },
+      {
+        path: '/author/:authorID',
+        name: 'author',
+        component: () => import('../views/Author')
       }
     ]
   })

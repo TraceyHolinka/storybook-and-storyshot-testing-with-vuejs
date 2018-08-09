@@ -1,7 +1,8 @@
 <script>
 export default {
     props: {
-        article: { type: Object, required: true }
+        article: { type: Object, required: true },
+        showAuthor: { type: Boolean, required: false, default: true }
     }
 }
 </script>
@@ -11,7 +12,7 @@ export default {
         <h2>{{ article.title }}</h2>
         <img :src="article.imageUrl">
         <p>{{ article.summary }}</p>
-        <p>Author: {{ article.author.name }}</p>
+        <p v-if="showAuthor">Author: <router-link :to="{ name: 'author', params: { authorID: article.author.id } }">{{ article.author.name }}</router-link></p>
     </article>
 </template>
 

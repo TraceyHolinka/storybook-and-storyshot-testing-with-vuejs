@@ -1,6 +1,7 @@
 
 <script>
 import gql from 'graphql-tag'
+import ArticleList from '../components/ArticleList.vue'
 
 export default {
   data () {
@@ -19,8 +20,13 @@ export default {
           articles {
             id
             title
-            summary
             imageUrl
+            summary
+            postedDate
+            author {
+              id
+              name
+            }
           }
         }
       }`,
@@ -29,33 +35,16 @@ export default {
           id: this.authorId
         }
       }
-    },
-    authors: gql`query getAuthors {
-      authors {
-        id
-        name
-        articles {
-          id
-          title
-          summary
-        }
-      }
-    }`
+    }
+  },
+  components: {
+    ArticleList
   }
 }
 </script>
 
 <template>
-  <div>
-    <h1>Vue GraphQL Meetup</h1>
-    <section v-if="author">
-      <label for="author">Select author to view:</label>
-      <select v-model="authorId" id="author">
-        <option v-for="author in authors" :key="author.id" :value="author.id">{{ author.name }}</option>
-      </select>
-
-    </section>
-  </div>
+  <ArticleList :articles="author.articles" :showAuthor="false" v-bind="$attrs"/>
 </template>
 
 <style>

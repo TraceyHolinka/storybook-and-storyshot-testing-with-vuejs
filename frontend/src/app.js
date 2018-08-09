@@ -23,11 +23,8 @@ const apolloClient = new ApolloClient({
 Vue.use(VueRouter)
 Vue.use(VueApollo)
 
-const router = createRouter({ apolloClient })
-
-const apolloProvider = new VueApollo({
-  defaultClient: apolloClient
-})
+const router = createRouter()
+const apolloProvider = new VueApollo({ defaultClient: apolloClient })
 
 new Vue({
   el: '#app',

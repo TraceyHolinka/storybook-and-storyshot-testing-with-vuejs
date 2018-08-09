@@ -1,7 +1,7 @@
 
 <script>
 import gql from 'graphql-tag'
-import Home from '../components/Home.vue'
+import ArticleList from '../components/ArticleList.vue'
 
 export default {
   apollo: {
@@ -20,11 +20,11 @@ export default {
     }`
   },
   components: {
-    Home
+    ArticleList
   }
 }
 </script>
 
 <template>
-  <Home :articles="articles"/>
+  <ArticleList :articles="articles"/>
 </template>
