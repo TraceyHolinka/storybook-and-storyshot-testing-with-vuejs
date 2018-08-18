@@ -3,62 +3,74 @@
 import gql from 'graphql-tag'
 
 export default {
-  data () {
+  data() {
     return {
-      authorId: 0,
+      authorId: 0
     }
   },
   apollo: {
     author: {
-      query: gql`query getAuthor ($id: Int!) {
-        author (id: $id) {
-          id
-          name
-          avatarUrl
-          bio
-          articles {
+      query: gql`
+        query getAuthor($id: Int!) {
+          author(id: $id) {
             id
-            title
-            summary
-            imageUrl
+            name
+            avatarUrl
+            bio
+            articles {
+              id
+              title
+              summary
+              imageUrl
+            }
           }
         }
-      }`,
-      variables () {
+      `,
+      variables() {
         return {
           id: this.authorId
         }
       }
     },
-    authors: gql`query getAuthors {
-      authors {
-        id
-        name
-        articles {
+    authors: gql`
+      query getAuthors {
+        authors {
           id
-          title
-          summary
+          name
+          articles {
+            id
+            title
+            summary
+          }
         }
       }
-    }`
+    `
   }
 }
 </script>
 
 <template>
   <div>
-    <h1>Vue GraphQL Meetup</h1>
     <section v-if="author">
       <label for="author">Select author to view:</label>
-      <select v-model="authorId" id="author">
-        <option v-for="author in authors" :key="author.id" :value="author.id">{{ author.name }}</option>
+      <select
+        id="author"
+        v-model="authorId">
+        <option
+          v-for="author in authors"
+          :key="author.id"
+          :value="author.id">
+          {{ author.name }}
+        </option>
       </select>
 
       <h2>Author: {{ author.name }}</h2>
       <div>
         <h2>Articles</h2>
         <div v-if="author.articles && author.articles.length">
-          <div v-for="article in author.articles" :key="article.id"/>
+          <div
+            v-for="article in author.articles"
+            :key="article.id"/>
         </div>
         <div v-else>
           This author has written no articles
@@ -67,6 +79,3 @@ export default {
     </section>
   </div>
 </template>
-
-<style>
-</style>

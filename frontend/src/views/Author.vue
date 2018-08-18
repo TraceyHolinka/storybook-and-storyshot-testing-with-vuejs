@@ -4,48 +4,51 @@ import gql from 'graphql-tag'
 import ArticleList from '../components/ArticleList.vue'
 
 export default {
-  data () {
+  components: {
+    ArticleList
+  },
+  data() {
     return {
-      authorId: 0,
+      authorId: 0
     }
   },
   apollo: {
     author: {
-      query: gql`query getAuthor ($id: Int!) {
-        author (id: $id) {
-          id
-          name
-          avatarUrl
-          bio
-          articles {
+      query: gql`
+        query getAuthor($id: Int!) {
+          author(id: $id) {
             id
-            title
-            imageUrl
-            summary
-            postedDate
-            author {
+            name
+            avatarUrl
+            bio
+            articles {
               id
-              name
+              title
+              imageUrl
+              summary
+              postedDate
+              author {
+                id
+                name
+              }
             }
           }
         }
-      }`,
-      variables () {
+      `,
+      variables() {
         return {
           id: this.authorId
         }
       }
     }
-  },
-  components: {
-    ArticleList
   }
 }
 </script>
 
 <template>
-  <ArticleList :articles="author.articles" :showAuthor="false" v-bind="$attrs"/>
+  <ArticleList
+    :articles="author.articles"
+    :show-author="false"
+    :title="`Articles by ${author.name}`"
+    v-bind="$attrs"/>
 </template>
-
-<style>
-</style>

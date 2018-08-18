@@ -1,28 +1,14 @@
 {
-    "extends": [
-        "stadard",
-        "plugin:vue/recommend",
-        "prettier",
-        "prettier/standard"
-    ],
-    "plugins": [
-        "stadard",
-        "prettier"
-    ],
-    "rules": {
-        "no-console": 0,
-        "vue/max-attributes-per-line": 0,
-        "vue/order-in-components": 0,
-        "vue/attributes-oreder": 0
-    },
-    "parserOptions": {
-        "parser": "babel-eslint",
-        "ecmaVersion": 2018,
-        "allowImportExportEverywhere": true
-    },
-    "globals": {
-        "require": true,
-        "global": true,
-        "process": true
-    }
+  "extends": ["standard", "plugin:vue/recommended", "prettier", "prettier/standard"],
+  "plugins": ["standard", "prettier"],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2018,
+    "allowImportExportEverywhere": true
+  },
+  "globals": {
+    "require": true,
+    "global": true,
+    "process": true
+  }
 }

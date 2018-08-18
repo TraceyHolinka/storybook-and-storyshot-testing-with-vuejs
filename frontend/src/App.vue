@@ -6,15 +6,16 @@
 </template>
 
 <script>
-import TheHeader from './components/TheHeader'
+import TheHeader from './components/TheHeader.vue'
+
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     TheHeader
   }
 }
 </script>
 
-<style <style lang="postcss">
+<style lang="postcss">
 @import url(assets/globals.css);
 </style>
