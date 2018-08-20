@@ -9,7 +9,8 @@ export default {}
     <router-link
       :to="{ name: 'home'}"
       class="site-title">
-      Faker News: The Real Fake News</router-link>
+      Faker News: The Real Fake News
+    </router-link>
   </div>
 </template>
 
@@ -17,17 +18,18 @@ export default {}
 @import url(../assets/vars-include.css);
 .the-header {
   display: flex;
-  align-items: flex-start;
-  height: auto;
+  margin-bottom: 24px;
 
   & .hamburger-icon {
-    width: 36px;
-    height: 36px;
-    padding: 8px;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    margin-right: 24px;
+    fill: var(--color-primary-accent);
   }
 
   & .site-title {
-    color: var(--color-3);
+    color: var(--color-primary);
     @apply --font-thirtysix;
     font-weight: bold;
   }

@@ -14,7 +14,7 @@ export default {
 
 <template>
   <div class="article-list">
-    <h1>{{ title }}</h1>
+    <h1 class="heading">{{ title }}</h1>
     <section v-if="articles && articles.length">
       <ArticleCard
         v-for="article in articles"
@@ -29,9 +29,11 @@ export default {
 
 <style lang="postcss">
 @import url(../assets/vars-include.css);
+
 .article-list {
-  & h1 {
-    @apply --font-twentyfour;
+  & .heading {
+    @apply --font-thirty;
+    text-align: center;
   }
 }
 </style>

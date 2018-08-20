@@ -10,9 +10,14 @@ export function createRouter() {
         component: () => import('../views/Home')
       },
       {
-        path: '/author/:authorID',
+        path: '/author/:authorId',
         name: 'author',
         component: () => import('../views/Author')
+      },
+      {
+        path: '/:articleId',
+        name: 'article',
+        component: () => import('../views/Article')
       }
     ]
   })

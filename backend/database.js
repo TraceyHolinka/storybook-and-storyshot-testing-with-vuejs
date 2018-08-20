@@ -29,20 +29,20 @@ function postedDate(days) {
 const authors = [
   {
     id: 0,
-    name: 'Faker Author 1',
-    bio: faker.lorem.sentence(getRandomInt(10, 15)),
+    name: 'Faker News Author 1',
+    bio: faker.lorem.paragraph(getRandomInt(3, 4)),
     avatarUrl: avatarUrl
   },
   {
     id: 1,
-    name: 'Faker Author 2',
-    bio: faker.lorem.sentence(getRandomInt(10, 15)),
+    name: 'Faker News Author 2',
+    bio: faker.lorem.paragraph(getRandomInt(3, 4)),
     avatarUrl: avatarUrl
   },
   {
     id: 2,
-    name: 'Faker Author 3',
-    bio: faker.lorem.sentence(getRandomInt(10, 15)),
+    name: 'Faker News Author 3',
+    bio: faker.lorem.paragraph(getRandomInt(3, 4)),
     avatarUrl: avatarUrl
   }
 ]
@@ -50,7 +50,7 @@ const authors = [
 const articles = [
   {
     id: 0,
-    title: 'Headline for Faker Article 1',
+    title: 'Headline for Faker News Article 1',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(3, 8),
     imageUrl: 'http://localhost:3000/assets/animals1.jpg',
@@ -59,7 +59,7 @@ const articles = [
   },
   {
     id: 1,
-    title: 'Headline for Faker Article 2',
+    title: 'Headline for Faker News Article 2',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(2, 10),
     imageUrl: 'http://localhost:3000/assets/cats1.jpg',
@@ -68,7 +68,7 @@ const articles = [
   },
   {
     id: 2,
-    title: 'Headline for Faker Article 3',
+    title: 'Headline for Faker News Article 3',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(2, 10),
     imageUrl: 'http://localhost:3000/assets/nature1.jpg',
@@ -77,7 +77,7 @@ const articles = [
   },
   {
     id: 3,
-    title: 'Headline for Faker Article 4',
+    title: 'Headline for Faker News Article 4',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(5, 20),
     imageUrl: 'http://localhost:3000/assets/animals2.jpg',
@@ -86,7 +86,7 @@ const articles = [
   },
   {
     id: 4,
-    title: 'Headline for Faker Article 5',
+    title: 'Headline for Faker News Article 5',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(5, 20),
     imageUrl: 'http://localhost:3000/assets/cats2.jpg',
@@ -95,7 +95,7 @@ const articles = [
   },
   {
     id: 5,
-    title: 'Headline for Faker Article 6',
+    title: 'Headline for Faker News Article 6',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(5, 20),
     imageUrl: 'http://localhost:3000/assets/nature2.jpg',
@@ -104,7 +104,7 @@ const articles = [
   },
   {
     id: 6,
-    title: 'Headline for Faker Article 7',
+    title: 'Headline for Faker News Article 7',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(5, 20),
     imageUrl: 'http://localhost:3000/assets/animals3.jpg',
@@ -113,7 +113,7 @@ const articles = [
   },
   {
     id: 7,
-    title: 'Headline for Faker Article 8',
+    title: 'Headline for Faker News Article 8',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(5, 20),
     imageUrl: 'http://localhost:3000/assets/cats3.jpg',
@@ -122,7 +122,7 @@ const articles = [
   },
   {
     id: 8,
-    title: 'Headline for Faker Article 9',
+    title: 'Headline for Faker News Article 9',
     summary: faker.lorem.paragraph(getRandomInt(3, 5)),
     body: bodyText(5, 20),
     imageUrl: 'http://localhost:3000/assets/nature3.jpg',

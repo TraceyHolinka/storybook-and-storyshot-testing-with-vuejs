@@ -40,6 +40,8 @@ This grid is fully responsive by using <code>fr</code> for columns while gaps ar
     grid-template-columns: 1fr repeat(3, 16px 1fr);
   }
 
+  /* -- Placing and element within the grid -- */
+  /* Element spans the entire grid */
   --4-column-grid-all-columns: {
     -ms-grid-column: 1;
     -ms-grid-column-span: 7;

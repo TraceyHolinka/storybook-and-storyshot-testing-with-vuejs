@@ -1,15 +1,17 @@
 
 <script>
 import gql from 'graphql-tag'
+import AuthorBio from '../components/AuthorBio.vue'
 import ArticleList from '../components/ArticleList.vue'
 
 export default {
   components: {
+    AuthorBio,
     ArticleList
   },
   data() {
     return {
-      authorId: 0
+      authorId: this.authorId
     }
   },
   apollo: {
@@ -37,7 +39,7 @@ export default {
       `,
       variables() {
         return {
-          id: this.authorId
+          id: this.$route.params.authorId
         }
       }
     }
@@ -46,9 +48,18 @@ export default {
 </script>
 
 <template>
-  <ArticleList
-    :articles="author.articles"
-    :show-author="false"
-    :title="`Articles by ${author.name}`"
-    v-bind="$attrs"/>
+  <div>
+    <AuthorBio
+      v-if="author"
+      :id="author.id"
+      :name="author.name"
+      :avatar-url="author.avatarUrl"
+      :bio="author.bio"/>
+    <ArticleList
+      v-if="author && author.articles"
+      :articles="author.articles"
+      :show-author="false"
+      :title="null"
+      v-bind="$attrs"/>
+  </div>
 </template>

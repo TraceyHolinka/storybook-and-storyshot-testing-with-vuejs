@@ -4,27 +4,31 @@ import gql from 'graphql-tag'
 import ArticleList from '../components/ArticleList.vue'
 
 export default {
-  apollo: {
-    articles: gql`query getArticles {
-      articles {
-        id
-        title
-        imageUrl
-        summary
-        postedDate
-        author {
-          id
-          name
-        }
-      }
-    }`
-  },
   components: {
     ArticleList
+  },
+  apollo: {
+    articles: gql`
+      query getArticles {
+        articles {
+          id
+          title
+          imageUrl
+          summary
+          postedDate
+          author {
+            id
+            name
+          }
+        }
+      }
+    `
   }
 }
 </script>
 
 <template>
-  <ArticleList :articles="articles"/>
+  <ArticleList
+    v-if="articles"
+    :articles="articles"/>
 </template>

@@ -1,6 +1,5 @@
 :root {
-  --font-primary: 'Open Sans', Arial, sans-serif;
-  --font-accent: 'Avenir Next', 'Avenir', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-primary: 'Open Sans', sans-serif;
 
   --font-fiftyfour: {
     font-size: 54px;
@@ -14,10 +13,16 @@
     letter-spacing: -0.64px;
   }
 
+  --font-thirty: {
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.64px;
+  }
+
   --font-twentyfour: {
     font-size: 24px;
-    line-height: 28px;
-    letter-spacing: 0;
+    line-height: 29px;
+    letter-spacing: -0.32px;
   }
 
   --font-twenty: {
