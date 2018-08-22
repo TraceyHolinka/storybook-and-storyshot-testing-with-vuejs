@@ -39,14 +39,17 @@
 
 ## Build Setup
 
-Install dependencies
+### Install dependencies
 
 ```bash
 yarn install
-yarn run dev
 ```
 
 Serve with hot reload at localhost:8080
+
+```bash
+yarn run dev
+```
 
 ## Run StoryShot Tests
 

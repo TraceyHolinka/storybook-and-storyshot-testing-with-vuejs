@@ -30,19 +30,19 @@ const authors = [
   {
     id: 0,
     name: 'Faker News Author 1',
-    bio: faker.lorem.paragraph(getRandomInt(3, 4)),
+    bio: faker.lorem.paragraph(getRandomInt(5, 7)),
     avatarUrl: avatarUrl
   },
   {
     id: 1,
     name: 'Faker News Author 2',
-    bio: faker.lorem.paragraph(getRandomInt(3, 4)),
+    bio: faker.lorem.paragraph(getRandomInt(5, 7)),
     avatarUrl: avatarUrl
   },
   {
     id: 2,
     name: 'Faker News Author 3',
-    bio: faker.lorem.paragraph(getRandomInt(3, 4)),
+    bio: faker.lorem.paragraph(getRandomInt(5, 7)),
     avatarUrl: avatarUrl
   }
 ]

@@ -25,7 +25,7 @@ authorId int FK >- Author.id
 
 ```bash
 # install dependencies
-yarn # or npm install
+yarn install
 
 # serve graphql at localhost:3000
 node server

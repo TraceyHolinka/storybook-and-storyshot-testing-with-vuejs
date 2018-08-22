@@ -59,7 +59,7 @@ export default {
       v-if="author && author.articles"
       :articles="author.articles"
       :show-author="false"
-      :title="null"
+      :title="`Articles by ${author.name}`"
       v-bind="$attrs"/>
   </div>
 </template>
