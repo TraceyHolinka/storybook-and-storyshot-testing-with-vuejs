@@ -34,6 +34,7 @@ export default {
   & .heading {
     @apply --font-thirty;
     text-align: center;
+    color: var(--color-secondary-accent);
   }
 }
 </style>

@@ -1,18 +1,14 @@
-/* 
-https://jestjs.io/docs/en/configuration#options
-https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core#configure-jest-for-vue
-*/
-
-const path = require('path')
-
 module.exports = {
-  rootDir: path.resolve(__dirname),
+  moduleFileExtensions: ['js', 'jsx', 'json', 'vue'],
   transform: {
-    '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
-    '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor'
+    '^.+\\.vue$': 'vue-jest',
+    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+    '^.+\\.jsx?$': 'babel-jest'
   },
-  transformIgnorePatterns: ['<rootDir>/node_modules/(?!(@storybook/.*\\.vue$))'],
-  moduleFileExtensions: ['js', 'json', 'vue'],
-  snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
-  testURL: 'http://localhost:8080'
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1'
+  },
+  snapshotSerializers: ['jest-serializer-vue'],
+  testMatch: ['**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'],
+  testURL: 'http://localhost/'
 }

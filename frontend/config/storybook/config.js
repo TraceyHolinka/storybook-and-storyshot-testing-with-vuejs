@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { configure, addDecorator } from '@storybook/vue'
 import Vue from 'vue'
 import StoryRouter from 'storybook-vue-router'
-import AppStorybook from '../src/stories/AppStorybook.vue'
+import AppStorybook from '../../src/stories/AppStorybook.vue'
 
 Vue.component('AppStorybook', AppStorybook)
 
@@ -14,7 +15,7 @@ addDecorator(() => {
 })
 
 // https://storybook.js.org/basics/writing-stories/#loading-stories-dynamically
-const req = require.context('../src/stories', true, /.stories.js$/)
+const req = require.context('../../src/stories', true, /.stories.js$/)
 function loadStories() {
   req.keys().forEach(filename => req(filename))
 }
