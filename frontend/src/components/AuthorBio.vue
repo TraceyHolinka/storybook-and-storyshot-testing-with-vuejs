@@ -1,5 +1,10 @@
 <script>
+import Avatar from './Avatar.vue'
+
 export default {
+  components: {
+    Avatar
+  },
   props: {
     id: { type: Number, requried: true, default: null },
     name: { type: String, requried: true, default: null },
@@ -12,9 +17,7 @@ export default {
 <template>
   <section class="author-bio">
     <h1 class="name">About {{ name }}</h1>
-    <img
-      :src="avatarUrl"
-      class="avatar">
+    <Avatar class="avatar"/>
     <p class="bio">{{ bio }}</p>
   </section>
 </template>
@@ -43,13 +46,18 @@ export default {
     width: 100%;
     max-height: 150px;
     height: auto;
-    border-radius: 100%;
+    padding-bottom: 6px;
+    border-radius: 75%;
+    background: var(--color-primary);
+    fill: var(--color-background);
+    stroke: var(--color-background);
   }
 
   & .bio {
     -ms-grid-column: 3;
     -ms-grid-column-span: 7;
     grid-column: 3 / span 7;
+    @apply --font-sixteen;
   }
 
   & .avatar,

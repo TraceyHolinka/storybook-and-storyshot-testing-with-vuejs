@@ -33,7 +33,7 @@
 
   --font-sixteen: {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 22px;
     letter-spacing: 0;
   }
 
@@ -43,7 +43,7 @@
     letter-spacing: 0.1px;
   }
 
-  --font-tweleve: {
+  --font-twelve: {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.3px;

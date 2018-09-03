@@ -1,15 +1,27 @@
 :root {
-  --color-1: #f5f8f7;
-  --color-2: #f4bf76;
-  --color-3: #ee6b2a;
-  --color-4: #f59748;
-  --color-5: #6a4744;
+  --manatee: rgba(157, 162, 171, 1);
+  --opera-mauve: rgba(161, 136, 166, 1);
+  --prussian-blue: rgba(13, 50, 77, 1);
+  --chinese-violet: rgba(127, 90, 131, 1);
+  --rich-black: rgba(2, 2, 2, 1);
 
-  --color-primary: var(--color-1);
-  --color-primary-accent: var(--color-2);
-  --color-secondary-accent: var(--color-3);
-  --color-secondary: var(--color-4);
-  --color-dark: var(--color-5);
+  --columbia-blue: rgba(207, 222, 231, 1);
+  --jordy-blue: rgba(146, 180, 244, 1);
+  --united-nations-blue: rgba(94, 124, 226, 1);
+  --han-blue: rgba(68, 114, 202, 1);
+  --smalt: rgba(10, 54, 157, 1);
+
+  --white-smoke: rgba(245, 248, 247, 1);
+  --mellow-apricot: rgba(244, 191, 118, 1);
+  --deep-carrot-orange: rgba(238, 107, 42, 1);
+  --neon-carrot: rgba(245, 151, 72, 1);
+  --rose-ebony: rgba(106, 71, 68, 1);
+
+  --color-primary: var(--white-smoke);
+  --color-primary-accent: var(--mellow-apricot);
+  --color-secondary-accent: var(--deep-carrot-orange);
+  --color-secondary: var(--neon-carrot);
+  --color-dark: var(--rose-ebony);
 
   --color-font: var(--color-primary);
   --color-background: var(--color-dark);

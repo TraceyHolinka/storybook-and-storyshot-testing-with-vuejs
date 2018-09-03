@@ -18,6 +18,7 @@ export default {
     <section v-if="articles && articles.length">
       <ArticleCard
         v-for="article in articles"
+        v-bind="$attrs"
         :key="article.id"
         :article="article"/>
     </section>
@@ -31,6 +32,10 @@ export default {
 @import url(../assets/vars-include.css);
 
 .article-list {
+  & .article-card:first-of-type {
+    margin-top: 24px;
+  }
+
   & .heading {
     @apply --font-thirty;
     text-align: center;
