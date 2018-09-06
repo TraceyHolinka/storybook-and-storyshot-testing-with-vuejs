@@ -9,14 +9,17 @@ export default {
 
 <template>
   <article class="article-card">
-    <h2 class="headline">
+    <h2
+      v-if="!!article.title"
+      class="headline">
       <router-link :to="{ name: 'article', params: { articleId: article.id } }">{{ article.title }}</router-link>
     </h2>
     <img
+      v-if="!!article.imageUrl"
       :src="article.imageUrl"
       class="image-lead">
     <p class="summary">{{ article.summary }}</p>
-    <p v-if="showAuthor">By <router-link :to="{ name: 'author', params: { authorId: article.author.id } }">{{ article.author.name }}</router-link></p>
+    <p v-if="showAuthor && !!article.author.name">By <router-link :to="{ name: 'author', params: { authorId: article.author.id } }">{{ article.author.name }}</router-link></p>
   </article>
 </template>
 

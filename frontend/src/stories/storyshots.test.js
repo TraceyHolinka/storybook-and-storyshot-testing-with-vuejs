@@ -1,14 +1,17 @@
-import initStoryshots, { imageSnapshot } from '@storybook/addon-storyshots'
+import initStoryshots from '@storybook/addon-storyshots'
+import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer'
 import expect from 'expect'
 
 const { configureToMatchImageSnapshot } = require('jest-image-snapshot')
 
 initStoryshots({
+  configPath: 'config/storybook',
   suite: 'storyshots',
   test: imageSnapshot({
     beforeScreenshot(page) {
       page.setViewport({ width: 980, height: 1080 })
-    }
+    },
+    storybookUrl: 'http://localhost:6006'
   })
 })
 

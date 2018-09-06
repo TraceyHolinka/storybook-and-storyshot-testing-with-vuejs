@@ -15,7 +15,7 @@ export default {
 <template>
   <div class="article-list">
     <h1 class="heading">{{ title }}</h1>
-    <section v-if="articles && articles.length">
+    <section v-if="!!articles.length">
       <ArticleCard
         v-for="article in articles"
         v-bind="$attrs"

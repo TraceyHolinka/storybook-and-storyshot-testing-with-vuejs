@@ -15,12 +15,22 @@ const defaultData = {
   }
 }
 
-storiesOf('ArticleCard', module).add('default', () => ({
-  components: { ArticleCard },
-  template: '<ArticleCard :article="article"/>',
-  data() {
-    return {
-      ...defaultData
+storiesOf('ArticleCard', module)
+  .add('default', () => ({
+    components: { ArticleCard },
+    template: '<ArticleCard :article="article"/>',
+    data() {
+      return {
+        ...defaultData
+      }
     }
-  }
-}))
+  }))
+  .add("don't show author", () => ({
+    components: { ArticleCard },
+    template: '<ArticleCard :article="article" :show-author="false"/>',
+    data() {
+      return {
+        ...defaultData
+      }
+    }
+  }))

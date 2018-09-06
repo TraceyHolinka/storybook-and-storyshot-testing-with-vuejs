@@ -10,7 +10,7 @@
     "test:e2e": "vue-cli-service test:e2e",
     "serve:storybook": "vue-cli-service serve:storybook -p 6006 -c config/storybook",
     "build:storybook": "vue-cli-service build:storybook -c config/storybook",
-    "storyshots": "jest '.*storyshots.test.js'"
+    "storyshots": "jest 'src/stories/storyshots.test.js'"
   },
   "dependencies": {
     "vue": "^2.5.17",
@@ -18,6 +18,7 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
     "@storybook/addon-actions": "^4.0.0-alpha.20",
     "@storybook/addon-links": "^4.0.0-alpha.20",
     "@storybook/addon-notes": "v4.0.0-alpha.20",
@@ -35,9 +36,10 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
     "graphql-tag": "^2.9.0",
-    "jest-vue-preprocessor": "^1.4.0",
+    "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.0",
+    "postcss-pxtorem": "^4.0.1",
     "storybook-vue-router": "^1.0.1",
     "vue-cli-plugin-apollo": "^0.16.4",
     "vue-cli-plugin-storybook": "^0.4.6",

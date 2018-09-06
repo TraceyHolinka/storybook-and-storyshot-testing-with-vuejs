@@ -13,6 +13,11 @@ export default new Router({
       component: () => import('./views/Home.vue')
     },
     {
+      path: '/authors',
+      name: 'authors',
+      component: () => import('./views/Authors')
+    },
+    {
       path: '/author/:authorId',
       name: 'author',
       component: () => import('./views/Author')

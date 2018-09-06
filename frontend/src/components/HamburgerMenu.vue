@@ -25,15 +25,10 @@ export default {
       class="hamburger-menu">
       <div
         class="close-icon"
-        @click="closeMenu">
+        @click.native="closeMenu">
         <!-- eslint-disable-next-line vue/max-attributes-per-line -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M25.71 7.71l-1.42-1.42-8.29 8.3-8.29-8.3-1.42 1.42 8.3 8.29-8.3 8.29 1.42 1.42 8.29-8.3 8.29 8.3 1.42-1.42-8.3-8.29 8.3-8.29z"/></svg>
       </div>
-      <router-link
-        :to="{ name: 'home'}"
-        @click.native="closeMenu">
-        Home
-      </router-link>
       <nav>
         <ul v-if="!!menu">
           <li
@@ -73,7 +68,7 @@ export default {
   width: 100%;
   max-width: 360px;
   height: 100%;
-  padding-top: 24px;
+  padding: 24px 12px;
   background: var(--color-primary);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   transition: transform 0.3s;
