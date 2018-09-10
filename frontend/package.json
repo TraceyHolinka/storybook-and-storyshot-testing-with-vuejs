@@ -1,5 +1,5 @@
 {
-  "name": "base-project",
+  "name": "storybook-and-storyshot-testing-with-vuejs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "test:e2e": "vue-cli-service test:e2e",
     "serve:storybook": "vue-cli-service serve:storybook -p 6006 -c config/storybook",
     "build:storybook": "vue-cli-service build:storybook -c config/storybook",
-    "storyshots": "jest 'src/stories/storyshots.test.js'"
+    "test:visual": "jest 'src/stories/storyshots.test.js'"
   },
   "dependencies": {
     "vue": "^2.5.17",

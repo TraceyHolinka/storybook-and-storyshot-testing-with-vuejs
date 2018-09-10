@@ -8,16 +8,19 @@ export default {
   props: {
     id: { type: Number, requried: true, default: null },
     name: { type: String, requried: true, default: null },
-    avatarUrl: { type: String, requried: true, default: null },
-    bio: { type: String, requried: true, default: null }
+    avatarUrl: { type: String, requried: false, default: null },
+    bio: { type: String, requried: true, default: null },
+    showAvatar: { type: Boolean, requried: false, default: true }
   }
 }
 </script>
 
 <template>
   <section class="author-bio">
-    <h1 class="name">About {{ name }}</h1>
-    <Avatar class="avatar"/>
+    <h1 class="name">{{ name }}</h1>
+    <Avatar
+      v-if="!!showAvatar"
+      class="avatar"/>
     <p class="bio">{{ bio }}</p>
   </section>
 </template>

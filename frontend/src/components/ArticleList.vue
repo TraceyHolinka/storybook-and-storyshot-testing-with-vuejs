@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div class="article-list">
+  <section class="article-list">
     <h1 class="heading">{{ title }}</h1>
     <section v-if="!!articles.length">
       <ArticleCard
@@ -25,7 +25,7 @@ export default {
     <section v-else>
       <p>There are no articles</p>
     </section>
-  </div>
+  </section>
 </template>
 
 <style lang="postcss">

@@ -18,7 +18,9 @@ export default {
       v-if="!!article.imageUrl"
       :src="article.imageUrl"
       class="image-lead">
-    <p class="summary">{{ article.summary }}</p>
+    <p
+      v-if="!!summary"
+      class="summary">{{ article.summary }}</p>
     <p v-if="showAuthor && !!article.author.name">By <router-link :to="{ name: 'author', params: { authorId: article.author.id } }">{{ article.author.name }}</router-link></p>
   </article>
 </template>

@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="author">
+  <section class="author">
     <AuthorBio
       v-if="author"
       :id="author.id"
@@ -26,7 +26,7 @@ export default {
       :articles="author.articles"
       :show-author="false"
       :title="`Articles by ${author.name}`"/>
-  </div>
+  </section>
 </template>
 
 <style lang="postcss">

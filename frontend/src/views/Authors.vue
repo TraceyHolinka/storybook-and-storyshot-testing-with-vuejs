@@ -23,7 +23,6 @@ export default {
           articles {
             id
             title
-            summary
             postedDate
           }
         }

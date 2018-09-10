@@ -30,6 +30,12 @@ function loadStories() {
 function loadStories() {
   require('../../src/stories/Article.stories')
   require('../../src/stories/ArticleCard.stories')
+  require('../../src/stories/ArticleList.stories')
+  require('../../src/stories/Author.stories')
+  require('../../src/stories/AuthorBio.stories')
+  require('../../src/stories/Authors.stories')
+  require('../../src/stories/Avatar.stories')
+  require('../../src/stories/HamburgerMenu.stories')
   require('../../src/stories/TheHeader.stories')
 }
 
