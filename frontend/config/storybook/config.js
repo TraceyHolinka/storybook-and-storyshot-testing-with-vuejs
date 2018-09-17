@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { configure, addDecorator } from '@storybook/vue'
+import { withNotes } from '@storybook/addon-notes'
 import Vue from 'vue'
 import StoryRouter from 'storybook-vue-router'
 import AppStorybook from '../../src/stories/AppStorybook.vue'
@@ -7,6 +8,8 @@ import AppStorybook from '../../src/stories/AppStorybook.vue'
 Vue.component('AppStorybook', AppStorybook)
 
 addDecorator(StoryRouter())
+addDecorator(withNotes())
+
 // https://storybook.js.org/basics/writing-stories/#using-decorators
 addDecorator(() => {
   return {
@@ -34,8 +37,6 @@ function loadStories() {
   require('../../src/stories/Author.stories')
   require('../../src/stories/AuthorBio.stories')
   require('../../src/stories/Authors.stories')
-  require('../../src/stories/Avatar.stories')
-  require('../../src/stories/HamburgerMenu.stories')
   require('../../src/stories/TheHeader.stories')
 }
 

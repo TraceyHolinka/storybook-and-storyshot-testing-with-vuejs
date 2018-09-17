@@ -9,7 +9,7 @@ initStoryshots({
   suite: 'storyshots',
   test: imageSnapshot({
     beforeScreenshot(page) {
-      page.setViewport({ width: 980, height: 1080 })
+      page.setViewport({ width: 750, height: 100 })
     },
     storybookUrl: 'http://localhost:6006'
   })

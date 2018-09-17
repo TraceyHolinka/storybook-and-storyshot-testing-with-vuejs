@@ -16,21 +16,29 @@ const defaultData = {
 }
 
 storiesOf('ArticleCard', module)
-  .add('default', () => ({
-    components: { ArticleCard },
-    template: '<ArticleCard :article="article"/>',
-    data() {
-      return {
-        ...defaultData
+  .add(
+    'default',
+    () => ({
+      components: { ArticleCard },
+      template: '<ArticleCard :article="article"/>',
+      data() {
+        return {
+          ...defaultData
+        }
       }
-    }
-  }))
-  .add("don't show author", () => ({
-    components: { ArticleCard },
-    template: '<ArticleCard :article="article" :show-author="false"/>',
-    data() {
-      return {
-        ...defaultData
+    }),
+    { notes: 'The ArticleCard components is called by ArticleList and is used on most Views.' }
+  )
+  .add(
+    "don't show author",
+    () => ({
+      components: { ArticleCard },
+      template: '<ArticleCard :article="article" :show-author="false"/>',
+      data() {
+        return {
+          ...defaultData
+        }
       }
-    }
-  }))
+    }),
+    { notes: 'The ArticleCard components without the author is used on the author view.' }
+  )

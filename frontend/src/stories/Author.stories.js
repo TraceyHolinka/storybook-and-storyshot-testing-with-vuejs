@@ -13,13 +13,15 @@ const defaultData = {
         id: 0,
         imageUrl: 'http://localhost:3000/assets/animals1.jpg',
         postedDate: 'Fri Aug 17 2018 08:17:20 GMT-0400 (EDT)',
-        title: 'Headline for Faker Article'
+        title: 'Headline for Faker Article',
+        summary: 'Quam sed est quis distinctio quia perspiciatis eum. Quisquam ab quo mollitia. Et ut et doloremque. Aut similique aut explicabo unde neque nobis voluptatem. Quis doloremque nostrum sint distinctio expedita error.'
       },
       {
         id: 0,
         imageUrl: 'http://localhost:3000/assets/animals1.jpg',
         postedDate: 'Fri Aug 17 2018 08:17:20 GMT-0400 (EDT)',
-        title: 'Headline for Faker Article'
+        title: 'Headline for Faker Article',
+        summary: 'Quam sed est quis distinctio quia perspiciatis eum. Quisquam ab quo mollitia. Et ut et doloremque. Aut similique aut explicabo unde neque nobis voluptatem. Quis doloremque nostrum sint distinctio expedita error.'
       }
     ]
   }
@@ -27,7 +29,7 @@ const defaultData = {
 
 storiesOf('Author', module).add('default', () => ({
   components: { Author },
-  template: '<author :author="author"/>',
+  template: '<Author :author="author"/>',
   data() {
     return {
       ...defaultData
