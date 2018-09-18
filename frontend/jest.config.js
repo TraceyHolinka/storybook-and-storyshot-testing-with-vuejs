@@ -12,9 +12,7 @@ module.exports = {
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!(@storybook/.*\\.vue$))'],
   testPathIgnorePatterns: ['<rootDir>/test/e2e/.*'],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
-  },
+  moduleNameMapper: { '^@/(.*)$': '<rootDir>/src/$1' },
   snapshotSerializers: ['jest-serializer-vue'],
   testMatch: ['**/tests/unit/**/*.spec.js', '**/src/stories/**/*.test.js'],
   testURL: 'http://localhost:8080',
