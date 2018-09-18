@@ -17,6 +17,7 @@ export default {
 
 <style lang="postcss">
 .the-footer {
-  margin: 24px auto;
+  margin: 36px auto 24px;
+  font-weight: bold;
 }
 </style>
