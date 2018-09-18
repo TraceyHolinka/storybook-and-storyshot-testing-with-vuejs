@@ -26,6 +26,8 @@ export default {
 @import url(../assets/vars-include.css);
 
 .article {
+  margin-bottom: 48px;
+
   & .meta {
     margin-bottom: 24px;
   }

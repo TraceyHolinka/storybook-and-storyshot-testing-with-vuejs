@@ -17,4 +17,7 @@ export default {}
 
 <style lang="postcss">
 @import url(../assets/globals.css);
+.app {
+  margin-bottom: 24px;
+}
 </style>

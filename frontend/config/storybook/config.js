@@ -38,6 +38,7 @@ function loadStories() {
   require('../../src/stories/AuthorBio.stories')
   require('../../src/stories/Authors.stories')
   require('../../src/stories/TheHeader.stories')
+  require('../../src/stories/TheFooter.stories')
 }
 
 configure(loadStories, module)
