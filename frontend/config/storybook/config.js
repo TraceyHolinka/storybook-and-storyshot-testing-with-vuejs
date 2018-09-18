@@ -19,7 +19,7 @@ addDecorator(() => {
 
 /* 
 To dynamically load stories with storyshot requires babel-plugin-require-context-hook but this conflicts
-with storybook so stories are loaded individually unit this is fix.
+with storyshot so stories are loaded individually until this is fix.
 // https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core#configure-jest-to-work-with-webpacks-requirecontext
 require('babel-plugin-require-context-hook/register')()
 
