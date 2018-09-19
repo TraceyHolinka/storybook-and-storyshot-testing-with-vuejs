@@ -9,9 +9,9 @@ initStoryshots({
   suite: 'storyshots',
   test: imageSnapshot({
     beforeScreenshot(page) {
+      // https://github.com/GoogleChrome/puppeteer/blob/v1.8.0/docs/api.md#pagesetviewportviewport
       page.setViewport({ width: 750, height: 100 })
-    },
-    storybookUrl: 'http://localhost:6006'
+    }
   })
 })
 
