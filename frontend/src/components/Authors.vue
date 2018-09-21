@@ -13,7 +13,6 @@ export default {
 
 <template>
   <div
-    v-if="!!authors"
     class="authors">
     <header>
       <h1 class="heading">Authors</h1>
@@ -29,6 +28,8 @@ export default {
 <style lang="postcss">
 @import url(../assets/vars-include.css);
 .authors {
+  padding: 0 16px;
+
   & .heading {
     margin-bottom: 30px;
     @apply --font-thirty;

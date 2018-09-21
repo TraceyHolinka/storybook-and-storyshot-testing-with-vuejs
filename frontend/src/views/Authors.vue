@@ -33,5 +33,7 @@ export default {
 </script>
 
 <template>
-  <Authors :authors="authors"/>
+  <Authors
+    v-if="!!authors"
+    :authors="authors"/>
 </template>

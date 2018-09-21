@@ -3,7 +3,7 @@
 *.orig
 */node_modules/
 */dist/
-
+*/tests/e2e/reports/
 # Editor directories and files
 .idea
 *.suo

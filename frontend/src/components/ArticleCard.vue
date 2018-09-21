@@ -12,16 +12,24 @@ export default {
     <h2
       v-if="!!article.title"
       class="headline">
-      <router-link :to="{ name: 'article', params: { articleId: article.id } }">{{ article.title }}</router-link>
+      <router-link :to="{ name: 'article', params: { articleId: article.id } }">
+        {{ article.title }}
+      </router-link>
     </h2>
     <img
       v-if="!!article.imageUrl"
       :src="article.imageUrl"
       class="image-lead">
-    <p v-if="showAuthor && !!article.author.name">By <router-link :to="{ name: 'author', params: { authorId: article.author.id } }">{{ article.author.name }}</router-link></p>
+    <p v-if="showAuthor && !!article.author.name">
+      By <router-link :to="{ name: 'author', params: { authorId: article.author.id } }">
+        {{ article.author.name }}
+      </router-link>
+    </p>
     <p
       v-if="!!article.summary"
-      class="article.summary">{{ article.summary }}</p>
+      class="article.summary">
+      {{ article.summary }}
+    </p>
   </article>
 </template>
 
@@ -44,8 +52,10 @@ export default {
   & .image-lead {
     object-fit: cover;
     object-position: right top;
-    width: 600px;
-    height: 360px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 360px;
+    height: 100%;
     margin-bottom: 24px;
     border-radius: 25px;
   }

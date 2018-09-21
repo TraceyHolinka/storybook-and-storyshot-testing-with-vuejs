@@ -11,12 +11,16 @@ const defaultData = {
   }
 }
 
-storiesOf('AuthorBio', module).add('default', () => ({
-  components: { AuthorBio },
-  template: '<AuthorBio :id="author.id" :name="author.name" :avatar-url="author.avatarUrl" :bio="author.bio"/>',
-  data() {
-    return {
-      ...defaultData
+storiesOf('AuthorBio', module).add(
+  'default',
+  () => ({
+    components: { AuthorBio },
+    template: '<AuthorBio :id="author.id" :name="author.name" :avatar-url="author.avatarUrl" :bio="author.bio"/>',
+    data() {
+      return {
+        ...defaultData
+      }
     }
-  }
-}))
+  }),
+  { notes: 'Used in Author View and Authors View.' }
+)

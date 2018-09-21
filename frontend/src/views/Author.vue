@@ -48,7 +48,7 @@ export default {
 <template>
   <div>
     <Author
-      v-if="author"
+      v-if="!!author"
       :author="author"
       v-bind="$attrs"/>
   </div>

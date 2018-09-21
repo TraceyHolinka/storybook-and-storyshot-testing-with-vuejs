@@ -9,14 +9,29 @@ export default {
 <template>
   <article class="article">
     <header class="meta">
-      <h1 class="headline">{{ article.title }}</h1>
-      <p class="author">By <router-link :to="{ name: 'author', params: { authorId: article.author.id } }">{{ article.author.name }}</router-link></p>
-      <p class="date">{{ article.postedDate | apDate }}</p>
+      <h1
+        v-if="!!article.title"
+        class="headline">
+        {{ article.title }}
+      </h1>
+      <p
+        v-if="!!article.author.name"
+        class="author">
+        By <router-link :to="{ name: 'author', params: { authorId: article.author.id } }">
+          {{ article.author.name }}
+        </router-link>
+      </p>
+      <p
+        v-if="article.postedDate"
+        class="date">
+        {{ article.postedDate | apDate }}</p>
     </header>
     <img
+      v-if="article.imageUrl"
       :src="article.imageUrl"
       class="image-lead">
     <section
+      v-if="!!article.body"
       class="body"
       v-html="article.body"/>
   </article>
@@ -26,7 +41,7 @@ export default {
 @import url(../assets/vars-include.css);
 
 .article {
-  margin-bottom: 48px;
+  margin: 0 16px 48px;
 
   & .meta {
     margin-bottom: 24px;

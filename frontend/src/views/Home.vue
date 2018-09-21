@@ -29,6 +29,6 @@ export default {
 
 <template>
   <ArticleList
-    v-if="articles"
+    v-if="!!articles"
     :articles="articles"/>
 </template>

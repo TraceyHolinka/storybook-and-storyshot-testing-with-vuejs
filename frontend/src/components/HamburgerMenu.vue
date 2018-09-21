@@ -9,11 +9,6 @@ export default {
       currentMenu: this.menu,
       selectedMenuIndexes: []
     }
-  },
-  methods: {
-    closeMenu() {
-      this.close()
-    }
   }
 }
 </script>
@@ -21,11 +16,11 @@ export default {
 <template>
   <transition name="hamburger-menu">
     <div
-      v-click-outside="closeMenu"
+      v-click-outside="close"
       class="hamburger-menu">
       <div
         class="close-icon"
-        @click.native="closeMenu">
+        @click="close">
         <!-- eslint-disable-next-line vue/max-attributes-per-line -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M25.71 7.71l-1.42-1.42-8.29 8.3-8.29-8.3-1.42 1.42 8.3 8.29-8.3 8.29 1.42 1.42 8.29-8.3 8.29 8.3 1.42-1.42-8.3-8.29 8.3-8.29z"/></svg>
       </div>
@@ -36,7 +31,7 @@ export default {
             :key="item.id">
             <router-link
               :to="{ name: item.name }"
-              @click.native="closeMenu">
+              @click.native="close">
               {{ item.label }}
             </router-link>
           </li>
@@ -81,6 +76,7 @@ export default {
 
   & .close-icon {
     position: absolute;
+    z-index: 1;
     right: 30px;
     width: 24px;
     height: 24px;

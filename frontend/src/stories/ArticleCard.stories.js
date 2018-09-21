@@ -40,5 +40,5 @@ storiesOf('ArticleCard', module)
         }
       }
     }),
-    { notes: 'The ArticleCard components without the author is used on the author view.' }
+    { notes: 'The ArticleCard components without the author is used on the Author View.' }
   )

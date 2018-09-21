@@ -16,13 +16,13 @@ export default {
 <template>
   <section class="author">
     <AuthorBio
-      v-if="author"
+      v-if="!!author"
       :id="author.id"
       :name="author.name"
       :avatar-url="author.avatarUrl"
       :bio="author.bio"/>
     <ArticleList
-      v-if="author && author.articles"
+      v-if="!!author.articles"
       :articles="author.articles"
       :show-author="false"
       :title="`Articles by ${author.name}`"/>
@@ -32,7 +32,9 @@ export default {
 <style lang="postcss">
 @import url(../assets/vars-include.css);
 
-.author {
+.author-page {
+  margin: 0 16px;
+
   & .author-bio {
     margin-bottom: 36px;
   }

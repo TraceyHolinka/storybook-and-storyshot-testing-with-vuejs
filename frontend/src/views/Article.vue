@@ -41,6 +41,6 @@ export default {
 
 <template>
   <Article 
-    v-if= "article"
+    v-if= "!!article"
     :article="article"/>
 </template>
